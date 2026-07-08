@@ -1,2 +1,3 @@
-# YesUI
-C++ WinAPI 制作的 UI 框架，尽量贴近 Tkinter 的简便。支持自动深色模式！
+# YesUI - 自定义 UI 框架
+C++ WinAPI 制作的 UI 框架，尽量贴近 Tkinter 的简便。支持自动深色模式、Mica，以及更多令人惊叹的功能！
+你可以自己设计、修改，也可以基于此设计自己的 UI 方案！
