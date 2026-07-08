@@ -236,7 +236,7 @@ public:
 	int msgbox(LPCWSTR message, LPCWSTR title, DWORD style, DWORD timeout = 0) {
 		RtlGetVersion(&os);
 		lastanswer = 0;
-		message_ = (message == NULL ? L"´íÎó" : message);
+		message_ = (message == NULL ? L"Â´Ã­ÃŽÃ³" : message);
 		title_ = title; style_ = style; hwnd_ = _cls._hwnd;
 		havehandle = 0;
 		CreateThread(0, 0, [](LPVOID lpParam) -> unsigned long {
@@ -292,7 +292,7 @@ public:
 	}
 	void size(int w, int h) {
 		RECT rect = { 0, 0, w, h };
-		AdjustWindowRectEx(&rect, GetWindowLongPtrW(_cls._hwnd, -16), FALSE, GetWindowLongPtrW(_cls._hwnd, -20));      // À©Õ¹ÑùÊ½
+		AdjustWindowRectEx(&rect, GetWindowLongPtrW(_cls._hwnd, -16), FALSE, GetWindowLongPtrW(_cls._hwnd, -20));      // Ã€Â©Ã•Â¹Ã‘Ã¹ÃŠÂ½
 		SetWindowPos(_cls._hwnd, HWND_TOP, 0, 0, rect.right - rect.left, rect.bottom - rect.top, SWP_NOMOVE | SWP_NOZORDER);
 		GetWindowRect(_cls._hwnd, &_cls._rc);
 	}
