@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WindowsUILibrary/WindowsUILibrary.vcxproj" Id="e2b06543-957b-4ae0-a65c-678b9e383a1e" />
+</Solution>
