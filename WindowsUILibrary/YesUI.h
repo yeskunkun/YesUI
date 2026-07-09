@@ -1,3 +1,7 @@
+#ifndef UNICODE
+#define UNICODE
+#endif
+
 #include <Windows.h>
 #include <dwmapi.h>
 #include <CommCtrl.h>
@@ -28,7 +32,7 @@ public:
 		_wc.hInstance = _inst;
 		_wc.lpfnWndProc = DefWindowProcW;
 		_wc.lpszClassName = L"WindowClass";
-		_wc.hCursor = LoadCursor(0, IDC_ARROW);
+		_wc.hCursor = LoadCursorW(0, IDC_ARROW);
 		if (!registered) {
 			if (!RegisterClassExW(&_wc)) {
 				return GetLastError();
