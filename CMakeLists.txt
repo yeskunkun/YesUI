@@ -13,8 +13,5 @@ else()
 add_library(YesUI SHARED WindowsUILibrary/WindowsUILibrary.cpp) # 动态库
 endif()
 
-if(MSVC)
-target_compile_options(YesUI PRIVATE /O2 /W4 /WX) # 对应：O2优化、最高警告级别、将警告视作错误
-else()
-target_compile_options(YesUI PRIVATE -O2 -Wall -Wextra -Wpedantic) # 同上
-endif()
+set_property(TARGET YesUI PROPERTY CXX_STANDARD 14)
+set_property(TARGET YesUI PROPERTY CXX_STANDARD_REQUIRED ON)

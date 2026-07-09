@@ -28,7 +28,7 @@ public:
 		_wc.hInstance = _inst;
 		_wc.lpfnWndProc = DefWindowProcW;
 		_wc.lpszClassName = L"WindowClass";
-		_wc.hCursor = LoadCursorW(0, IDC_ARROW);
+		_wc.hCursor = LoadCursor(0, IDC_ARROW);
 		if (!registered) {
 			if (!RegisterClassExW(&_wc)) {
 				return GetLastError();
@@ -209,7 +209,7 @@ private:
 	}
 	wstring Lower(LPCWSTR src) {
 		wstring dst = src;
-		LCMapStringW(LOCALE_USER_DEFAULT, LCMAP_LOWERCASE, src, wcslen(src), dst.data(), dst.size());
+		LCMapStringW(LOCALE_USER_DEFAULT, LCMAP_LOWERCASE, src, wcslen(src), &dst[0], dst.size());
 		return dst;
 	}
 	bool Equal(LPCWSTR a, LPCWSTR b) {
@@ -384,11 +384,11 @@ public:
 		_title = title;
 		_font = font;
 		DWORD dwStyle = 0;
-		if (anchor == "left") {
+		if (std::string(anchor) == "left") {
 			dwStyle = SS_LEFT;
-		} else if (anchor == "center") {
+		} else if (std::string(anchor) == "center") {
 			dwStyle = SS_CENTER;
-		} else if (anchor = "right") {
+		} else if (std::string(anchor) == "right") { // 注意：不应使用=
 			dwStyle = SS_RIGHT;
 		}
 		_hwnd = CreateWindowExW(0, L"Static", title, WS_CHILD | WS_VISIBLE | dwStyle,
