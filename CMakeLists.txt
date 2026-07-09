@@ -13,5 +13,5 @@ else()
 add_library(YesUI SHARED WindowsUILibrary/WindowsUILibrary.cpp) # 动态库
 endif()
 
-set_property(TARGET YesUI PROPERTY CXX_STANDARD 14)
+set_property(TARGET YesUI PROPERTY CXX_STANDARD 17)
 set_property(TARGET YesUI PROPERTY CXX_STANDARD_REQUIRED ON)
